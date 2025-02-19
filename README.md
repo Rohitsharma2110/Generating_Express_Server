@@ -29,4 +29,6 @@ How to install dependencies to run express server.js file:
           c).  run this command ==> 'npm install express cors'
       
 
- 
+ How to run 'server.js' file :
+   1.  open this directory in vs code or command prompt
+   2.  run this command ==>  'node server.js'
