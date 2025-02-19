@@ -43,5 +43,5 @@ How to run 'server.js' file that was generated in the output directory by server
 
 How to Check the functioning of generated server :
 
-  we can use Postman => postman is a API platform for building and using APIs. We can send different types of request to our running server routes and also we can pass different attributes in the request header (like : "authorization" : "admin" , "authorization" : "user", etc.) to check the functioning of middlewares.
+  we can use "Postman" => Postman is a API platform for building and using APIs. We can send different types of request to our running server routes and also we can pass different attributes in the request header (like : "authorization" : "admin" , "authorization" : "user", etc.) to check the functioning of middlewares.
 
