@@ -9,7 +9,8 @@ Project Requirements (dependencies) :
 How to run 'server_script.py' file :
   1. open the directory where you have stored 'server_script.py' and 'nodes_info.json' files.
   2. open command prompt or open this directory in vs code.
-       --- Note : python must be installed in this directory.
+
+          --- Note : python must be installed in this directory.
      
   4. fill the 'json' and 'output' path arguments and run this command ==>
   
@@ -32,5 +33,6 @@ How to install dependencies to run express server.js file:
  How to run 'server.js' file that was generated in the output directory by server_script.py file:
    1.  open the output directory in vs code or command prompt
    2.  run this command ==>  'node server.js'
-          --- Note:  node, express and cors must be installed in the output directory
+
+            --- Note:  node, express and cors must be installed in the output directory
     
