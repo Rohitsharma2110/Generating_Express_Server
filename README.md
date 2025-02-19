@@ -9,5 +9,8 @@ How to install dependencies:
   1.  for node.js  => download and install node.js from 'https://nodejs.org/en/download'. After this setup environmental variables for node.js
   2.  for express and cors  =>
           a).  go to output directory where you want to save your express server js file.
+      
           b).  open command prompt
+      
           c).  run command 'npm install express cors'
+      
