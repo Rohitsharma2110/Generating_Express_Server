@@ -11,25 +11,11 @@ app.use(cors({ origin: ['*'] }));
 
 // Auth Middleware - Auth Middleware
 const authMiddleware = (req, res, next) => {
-    if (!req.headers.authorization) {
+    if (req.headers.authorization !== 'user' && req.headers.authorization !== 'admin') {
         return res.status(401).json({ message: "Unauthorized" });
     }
     next();
 };
-
-// Admin Auth Middleware - Admin Auth Middleware
-const adminMiddleware = (req, res, next) => {
-    if (!req.headers.authorization || req.headers.authorization !== 'admin') {
-        return res.status(403).json({ message: "Forbidden" });
-    }
-    next();
-};
-
-// Logging Middleware - Logging Middleware
-app.use((req, res, next) => {
-    console.log(`${req.method} ${req.url}`);
-    next();
-});
 
 // Login Route - POST /login
 
@@ -49,6 +35,14 @@ app.post("/signout", (req, res) => {
     res.json({ message: "Signout successful" });
 });                
 
+// Admin Auth Middleware - Admin Auth Middleware
+const adminMiddleware = (req, res, next) => {
+    if (req.headers.authorization !== 'admin') {
+        return res.status(403).json({ message: "Forbidden" });
+    }
+    next();
+};
+
 // User Route - GET /user
 
 app.get("/user", authMiddleware, (req, res) => {
@@ -60,6 +54,12 @@ app.get("/user", authMiddleware, (req, res) => {
 app.get("/admin", authMiddleware, adminMiddleware, (req, res) => {
     res.json({ message: "Admin data" });
 });        
+
+// Logging Middleware - Logging Middleware
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
 
 // Home Page - GET /home
 
