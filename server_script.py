@@ -79,7 +79,7 @@ app.use(cors({{ origin: {allowed_origins} }}));
                 server_code += f"""
 // Auth Middleware - {node['name']}
 const authMiddleware = (req, res, next) => {{
-    if (!req.headers.authorization) {{
+    if (req.headers.authorization !== 'user' && req.headers.authorization !== 'admin') {{
         return res.status(401).json({{ message: "Unauthorized" }});
     }}
     next();
@@ -94,7 +94,7 @@ const authMiddleware = (req, res, next) => {{
                 server_code += f"""
 // Admin Auth Middleware - {node['name']}
 const adminMiddleware = (req, res, next) => {{
-    if (!req.headers.authorization || req.headers.authorization !== 'admin') {{
+    if (req.headers.authorization !== 'admin') {{
         return res.status(403).json({{ message: "Forbidden" }});
     }}
     next();
@@ -124,7 +124,6 @@ app.use((req, res, next) => {{
     #   ==>     Now we will handle routes : 
     
     # Finding and adding routes based on node properties andd endpoints
-    for node_id, node in nodes.items():
         
         if "endpoint" in node["properties"]:
             endpoint = node["properties"]["endpoint"]
@@ -235,7 +234,7 @@ app.use((req, res) => {
 
     server_code += f"""
 // run server on {port} port     
-app.listen({port}, () => console.log("Server running on http://localhost:{port}"));
+app.listen({port}, () => console.log("Server running on {port}"));
 """
 
     # Write to the output directory
