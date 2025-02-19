@@ -10,7 +10,9 @@ How to run 'server_script.py' file :
   1. open the directory where you have stored 'server_script.py' and 'nodes_info.json' files.
   2. open command prompt or open this directory in vs code.
 
-          --- Note : python must be installed in this directory.
+          --- Note : python must be installed in this directory. if not then first download and install python from 'https://www.python.org/downloads/'. After this setup environmental variables for python.
+          --- python version : 3.11 or higher 
+
      
   4. fill the 'json' and 'output' path arguments and run this command ==>
   
@@ -28,6 +30,8 @@ How to install dependencies to run express server.js file:
           b).  open command prompt or open this directory in vs code 
       
           c).  run this command ==> 'npm install express cors'
+
+          d).  version ==>  cors: (2.8.5 or higher), express: (4.21.2 or higher)
       
 
  How to run 'server.js' file that was generated in the output directory by server_script.py file:
