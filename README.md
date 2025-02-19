@@ -18,7 +18,8 @@ How to run 'server_script.py' file :
   
           python server_script.py --json path_to_node_config_file --output path_to_directory_where_server.js_will_be_generated
 
-          for example : python server_script.py --json nodes_info.json --output D:/Express_server 
+          for example : python server_script.py --json nodes_info.json --output D:/Express_server
+       --- Note : if we don't provide an output path, the server.js file will be generated in the current directory of 'script_server.py' file inside a folder "generated server".
 
 
 How to install dependencies to run express server.js file:
